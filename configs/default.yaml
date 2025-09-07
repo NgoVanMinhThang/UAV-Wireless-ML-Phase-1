@@ -1,0 +1,36 @@
+system:
+  dt: 0.1
+  steps: 200
+time: { seed: 42 }
+hardware: { cpu_cores: 8, gpu_tflops_est: 9.0, mem_gb: 16 }
+world:
+  bounds: [-120, 120, -120, 120, 0, 120]
+  n_uav: 3
+  n_ue: 120
+  satellites: [[0,0,300]]
+uav:
+  count: 3
+  altitude_m: 60.0
+  speed_mps: 8.0
+  waypoints: [[-80,-80,60],[80,-80,60],[80,80,60],[-80,80,60]]
+ue:
+  count: 120
+  speed_mps: 3.0
+  turn_std_deg: 25.0
+channel:
+  model: log_distance
+  ref_distance_m: 1.0
+  pathloss_exp: 2.1
+  ref_pathloss_db: 30.0
+  carrier_hz: 2.4e9
+  bandwidth_hz: 5.0e6
+  noise_figure_db: 5.0
+packet:
+  size_bytes: 1200
+  gen_prob_per_step: 0.2
+  priority: 1
+  max_log: 1000
+viz:
+  point_px: { ue: 6.0, uav: 10.0, bs: 10.0, sat: 10.0 }
+  wire_px: 2.0
+  uav_column_height: 60.0
