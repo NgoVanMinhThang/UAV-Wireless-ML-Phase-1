@@ -121,7 +121,7 @@ Bạn có 2 cách: **(A) dùng CLI** hoặc **(B) nhúng thư viện trong scrip
    ```bash
    pip uninstall pyglet -y
    pip install "pyglet==1.5.27"
-   
+   python3 cli.py --config configs/default.yaml --steps 3000
    ```
 
    Phím tắt: `R` reset camera • `←/→/↑/↓` xoay nhìn • `+/-` zoom • `G` lưới • `W` dây liên kết • `H` HUD • `Home` auto-frame.
