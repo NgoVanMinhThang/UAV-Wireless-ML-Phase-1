@@ -244,7 +244,7 @@ Tạo `plot_fps.png` và `plot_init.png` trong thư mục làm việc.
 
 Chạy toàn bộ:
 ```bash
-pytest -q
+pytest -m pytest
 ```
 
 ---
