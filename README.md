@@ -271,7 +271,16 @@ python -m pytest
 
 ---
 
-## 10) FAQ & lỗi thường gặp
+## 10) Tools tạo đủ artifact (one‑click)
+
+```bash
+tools\run_all_checks.bat
+```
+Sinh: `pytest.txt`, `headless_stats.json`, `results_fw_bench.csv`, `plot_fps.png`, `plot_init.png`, `phase1_validation_report.pdf`.
+
+---
+
+## 11) FAQ & lỗi thường gặp
 
 **Q: Mở renderer báo lỗi OpenGL/GLX/WGL?**  
 A: Kiểm tra driver GPU, chạy trong môi trường có OpenGL. Nếu không có, dùng `--headless`.
