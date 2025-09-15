@@ -9,7 +9,7 @@ Tài liệu này trình bày **tổng thể dự án** và **cách tạo/điều
 **UAV Wireless ML Simulator** là một mô phỏng nhẹ (Slim v3) cho bài toán **mạng không dây hỗ trợ bởi UAV**:
 - UE (User Equipment) di chuyển ngẫu nhiên trên mặt đất.
 - UAV bay ở độ cao xác định (tự do hoặc theo waypoint).
-- Tốc độ liên kết (UE→UAV/BS) được ước lượng bởi công thức Shannon dựa trên mô hình **pathloss** và **nhiễu**.
+- Tốc độ liên kết (UE→UAV/BS) được ước lượng bởi công thức Shannon dựa trên mô hình **pathloss** và **noise**.
 - **Renderer OpenGL** trực quan hóa 3D theo thời gian thực (pyglet + PyOpenGL) kèm **HUD** thống kê.
 - Có chế độ **headless** để chạy không vẽ, ghi nhận các chỉ số (thời gian, độ trễ gói,…).
 - Bộ **benchmark** đơn giản đo FPS và thời gian khởi tạo backend hiển thị.
@@ -17,8 +17,8 @@ Tài liệu này trình bày **tổng thể dự án** và **cách tạo/điều
 **Luồng xử lý chính**
 
 ```
-2 entry point:
-CLI: python cli.py --config configs/default.yaml --steps 600
+2 entry points:
+CLI: python cli.py --config configs/default.yaml --steps 3000
 quick_demo: python -m examples.quick_demo
       │
       ▼
@@ -99,14 +99,35 @@ Bạn có 2 cách: **(A) dùng CLI** hoặc **(B) nhúng thư viện trong scrip
 ### A) Chạy bằng CLI (nhanh nhất)
 1. Chuẩn bị YAML cấu hình (ví dụ `configs/default.yaml`, xem mẫu ở phần 5).
 2. Chạy **renderer**:
+   Trên Windows (PowerShell):
    ```bash
-   python cli.py --config configs/default.yaml
+   python -m venv .venv
+   .\.venv\Scripts\activate
+   python -m pip install --upgrade pip
+   python -m pip install -r requirements.txt
+   python cli.py --config configs/default.yaml --steps 3000
+   
    ```
+   Trên macOS/Linux (bash/zsh):
+   ```bash   
+   python3 -m venv .venv
+   source .venv/bin/activate
+   python3 -m pip install --upgrade pip
+   python3 -m pip install -r requirements.txt
+   
+   ```
+   # ⚠️ Fix lỗi pyglet trên macOS
+   ```bash
+   pip uninstall pyglet -y
+   pip install "pyglet==1.5.27"
+   
+   ```
+
    Phím tắt: `R` reset camera • `←/→/↑/↓` xoay nhìn • `+/-` zoom • `G` lưới • `W` dây liên kết • `H` HUD • `Home` auto-frame.
 
-3. Chạy **headless** (không vẽ, in thống kê JSON):
+4. Chạy **headless** (không vẽ, in thống kê JSON):
    ```bash
-   python cli.py --config configs/default.yaml --headless --steps 3000
+   python cli.py --config configs/default.yaml --headless --steps 3000 > artifacts\headless_stats.json
    ```
 
 ### B) Nhúng trong script của bạn
