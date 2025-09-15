@@ -99,6 +99,7 @@ Bạn có 2 cách: **(A) dùng CLI** hoặc **(B) nhúng thư viện trong scrip
 ### A) Chạy bằng CLI (nhanh nhất)
 1. Chuẩn bị YAML cấu hình (ví dụ `configs/default.yaml`, xem mẫu ở phần 5).
 2. Chạy **renderer**:
+
    Trên Windows (PowerShell):
    ```bash
    python -m venv .venv
@@ -125,7 +126,7 @@ Bạn có 2 cách: **(A) dùng CLI** hoặc **(B) nhúng thư viện trong scrip
 
    Phím tắt: `R` reset camera • `←/→/↑/↓` xoay nhìn • `+/-` zoom • `G` lưới • `W` dây liên kết • `H` HUD • `Home` auto-frame.
 
-4. Chạy **headless** (không vẽ, in thống kê JSON):
+6. Chạy **headless** (không vẽ, in thống kê JSON):
    ```bash
    python cli.py --config configs/default.yaml --headless --steps 3000 > artifacts\headless_stats.json
    ```
