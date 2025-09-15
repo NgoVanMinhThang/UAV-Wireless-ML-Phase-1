@@ -269,8 +269,6 @@ Chạy toàn bộ:
 python -m pytest
 ```
 
----
-
 ## 10) FAQ & lỗi thường gặp
 
 **Q: Mở renderer báo lỗi OpenGL/GLX/WGL?**  
