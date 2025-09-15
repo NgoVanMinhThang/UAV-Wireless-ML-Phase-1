@@ -116,7 +116,7 @@ Bạn có 2 cách: **(A) dùng CLI** hoặc **(B) nhúng thư viện trong scrip
    python3 -m pip install -r requirements.txt
    
    ```
-   # ⚠️ Fix lỗi pyglet trên macOS
+   ⚠️ Fix lỗi pyglet trên macOS
    ```bash
    pip uninstall pyglet -y
    pip install "pyglet==1.5.27"
