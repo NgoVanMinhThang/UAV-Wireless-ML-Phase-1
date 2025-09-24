@@ -1,0 +1,7 @@
+# NOTE: Patched to include sidebar overlay with buttons (Back/Toggle/Pause).
+# Imports added:
+#   from ui.sidebar import Sidebar   (you will import via relative or sys.path adjust)
+# New attributes on OpenGLRenderer:
+#   self.sidebar, self.paused
+# New key handling and mouse handling for sidebar hit-tests.
+# Back button closes the window (the launcher will re-open if you use it).
