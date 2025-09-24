@@ -1,0 +1,11 @@
+# --- GLUE CODE START: Sidebar integration ---
+try:
+    # Cho phép import nếu người dùng đặt pack này cạnh thư mục chính
+    import sys, os
+    here = os.path.dirname(__file__)
+    sys.path.append(os.path.abspath(os.path.join(here, "..")))  # thêm project root vào sys.path
+    from ui_sidebar import Sidebar
+    _SIDEBAR_OK = True
+except Exception as _e:
+    _SIDEBAR_OK = False
+# --- GLUE CODE END ---

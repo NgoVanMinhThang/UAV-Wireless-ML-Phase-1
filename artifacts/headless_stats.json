@@ -1,0 +1,10 @@
+{
+  "time_s": 60.00000000000058,
+  "step": 600,
+  "enqueued": 14543,
+  "dequeued": 14543,
+  "dropped": 0,
+  "avg_latency_s": 0.00023275632767457585,
+  "max_latency_s": 0.00027489108326895844,
+  "packets_logged": 1000
+}
