@@ -45,6 +45,7 @@ channel:
   tx_power_dbm: 18.0
   pathloss_exp: 2.1
   ref_pathloss_db: 30.0
+  ref_distance_m: 1.0
   carrier_hz: 2400000000.0
   bandwidth_hz: 5000000.0
   noise_figure_db: 5.0

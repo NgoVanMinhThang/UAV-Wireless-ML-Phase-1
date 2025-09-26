@@ -31,11 +31,10 @@ def pathloss_db(d_m: float, cfg) -> float:
         return 20.0 * math.log10(d) + 20.0 * math.log10(cfg.carrier_hz) - 147.55
 
     # Log-distance path loss
-    return (
-        cfg.ref_pathloss_db
-        + 10.0 * cfg.pathloss_exp * math.log10(d / cfg.ref_distance_m)
-    )
-
+    ref_d = getattr(cfg, "ref_distance_m", 1.0)
+    pl_ref = getattr(cfg, "ref_pathloss_db", 30.0)
+    n = getattr(cfg, "pathloss_exp", 2.0)
+    return pl_ref + 10.0 * n * math.log10(d / ref_d)
 
 def noise_power_dbm(bw_hz: float, nf_db: float) -> float:
     """Công suất nhiễu (dBm) trong băng BW, cộng thêm Noise Figure."""

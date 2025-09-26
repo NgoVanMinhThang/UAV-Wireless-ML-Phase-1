@@ -112,7 +112,7 @@ class Launcher:
             "world": {"bounds": [-120,120,-120,120,0,120], "n_uav": 3, "n_ue": int(self.new_n_ue), "satellites":[[0,0,300]]},
             "uav": {"count": 3, "altitude_m":60.0, "speed_mps":8.0, "waypoints":[[-80,-80,60],[80,-80,60],[80,80,60],[-80,80,60]]},
             "ue": {"speed_mps":1.5, "wander_radius":20.0},
-            "channel": {"tx_power_dbm":18.0, "pathloss_exp":2.1, "ref_pathloss_db":30.0, "carrier_hz":2.4e9, "bandwidth_hz":5.0e6, "noise_figure_db":5.0},
+            "channel": {"tx_power_dbm":18.0, "pathloss_exp":2.1, "ref_pathloss_db":30.0, "ref_distance_m": 1.0, "carrier_hz":2.4e9, "bandwidth_hz":5.0e6, "noise_figure_db":5.0},
             "packet": {"size_bytes":1200, "gen_prob_per_step":0.2, "priority":1, "max_log":1000},
             "viz": {"point_px":{"ue":6.0,"uav":10.0,"bs":10.0,"sat":10.0}, "wire_px":2.0, "uav_column_height":60.0}
         }
