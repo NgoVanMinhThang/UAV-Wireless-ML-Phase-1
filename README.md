@@ -15,7 +15,7 @@ Tài liệu này trình bày **tổng thể dự án** và **cách tạo/điều
 - **Benchmark** đo FPS và thời gian khởi tạo backend hiển thị.
 - **UI mode**: màn hình chọn/tạo config (launcher) và **sidebar** hiển thị thống kê + nút Back/Toggle wires/Pause.
 
-**Luồng xử lý chính**
+**Luồng xử lý chính**:
 
 ```
 2 entry points:
